@@ -6,6 +6,7 @@ import Pop from './utils/Pop.js'
 import { adsService } from './services/AdsService.js'
 import { AppState } from './AppState.js'
 
+// FIXME ads work when I change something in the code and then if I refresh the page, they go away 
 
 export function App() {
 
