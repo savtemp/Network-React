@@ -4,6 +4,10 @@ import { api } from "./AxiosService.js"
 
 
 class PostsService{
+  getProfilePosts(id) {
+    throw new Error('Method not implemented.');
+  }
+
   async getAllPosts() {
     AppState.posts = []
     const res = await api.get('api/posts')

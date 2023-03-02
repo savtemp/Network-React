@@ -6,7 +6,8 @@ import Pop from './utils/Pop.js'
 import { adsService } from './services/AdsService.js'
 import { AppState } from './AppState.js'
 
-// FIXME ads work when I change something in the code and then if I refresh the page, they go away 
+// FIXME ads work when I change something in the code and then if I refresh the page, they go away (this is because the ad in the appstate isn't reactive)
+// NOTE to fix this make a component that is observable (adBar) and throw in the adComponent on it and then add the adBar to the app.vue
 export function App() {
 
   async function getAds(){
