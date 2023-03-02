@@ -1,6 +1,7 @@
 // NOTE my rt did not work 
 import PropTypes from "prop-types";
 import React from "react";
+import { Link } from "react-router-dom";
 import { Post } from "../models/Post.js";
 import "./PostCard.scss"
 
@@ -10,7 +11,9 @@ export default function PostCard({post}){
   return(
     <div className="card">
       <div className="d-flex m-1 py-2">
-        <img className="profileImg rounded-circle" src={post.creator.picture} alt="" />
+        <Link to={'/profile/' + post.creator.id}>
+          <img className="profileImg rounded-circle" src={post.creator.picture} alt="" />
+        </Link>
         <p className="m-0 pt-2 px-2">{post.creator.name}</p>
       </div>
       <div className="">

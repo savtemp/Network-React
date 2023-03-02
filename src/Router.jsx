@@ -5,6 +5,7 @@ import AboutPage from './pages/AboutPage.jsx';
 import AccountPage from './pages/AccountPage.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import HomePage from './pages/HomePage.jsx';
+import ProfilePage from './pages/ProfilePage.jsx';
 import { accountService } from './services/AccountService.js';
 import AuthGuard from './utils/AuthGuard.jsx';
 
@@ -22,6 +23,10 @@ export const router = createHashRouter([
       {
         path: "about",
         element: <AboutPage />,
+      },
+      {
+        path: 'profile/:id',
+        element: <ProfilePage />
       },
       {
         path: "account",

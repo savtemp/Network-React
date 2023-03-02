@@ -1,5 +1,6 @@
 import { observer } from "mobx-react-lite";
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { AppState } from "../AppState.js";
 import PostCard from "../components/PostCard.jsx";
 import { accountService } from "../services/AccountService.js";
@@ -46,7 +47,9 @@ function HomePage() {
 
           <div className="col-md-4 card profileInfoCard">
             <div className="row">
-              <img className="img-fluid rounded-circle p-2" src={account?.picture} alt="" />
+              <Link to={'account'}>
+                <img className="img-fluid rounded-circle p-2" src={account?.picture} alt="" />
+              </Link>
               <p className="m-0 py-2 text-center">{account?.name}</p>
             </div>
           </div>
