@@ -2,6 +2,7 @@ import { observer } from 'mobx-react-lite';
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { AppState } from '../AppState.js';
+import ProfileCard from '../components/ProfileCard.jsx';
 // import PostCard from '../components/PostCard.jsx';
 import { postsService } from '../services/PostsService.js';
 import Pop from '../utils/Pop.js';
@@ -9,6 +10,8 @@ import Pop from '../utils/Pop.js';
 function ProfilePage() {
 
   const {id} = useParams()
+
+  let profileCard = AppState.activeProfile
 
   async function getProfilePosts(){
     try {
@@ -32,7 +35,7 @@ function ProfilePage() {
       <div className='row'>
         <div className="col-md-8">
           {/* STUB a profileCard will go here */}
-          <p>This is the profile page</p>
+          {profileCard}
         </div>
       </div>
       <div className="row">
