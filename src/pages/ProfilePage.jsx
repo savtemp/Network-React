@@ -2,7 +2,7 @@ import { observer } from 'mobx-react-lite';
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { AppState } from '../AppState.js';
-import ProfileCard from '../components/ProfileCard.jsx';
+
 // import PostCard from '../components/PostCard.jsx';
 import { postsService } from '../services/PostsService.js';
 import Pop from '../utils/Pop.js';

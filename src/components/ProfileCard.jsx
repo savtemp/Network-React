@@ -4,7 +4,7 @@ import { AppState } from '../AppState.js';
 
 function profileCard() {
 
-  // const activeProfile = AppState.activeProfile
+  const activeProfile = AppState.activeProfile
 
   const socialIcons = (
     <div className='d-flex align-items-center gap-3 my-2 justify-content-center'>
