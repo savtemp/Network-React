@@ -2,6 +2,7 @@ import { observer } from 'mobx-react-lite';
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { AppState } from '../AppState.js';
+import PostCard from '../components/PostCard.jsx';
 import ProfileCard from '../components/ProfileCard.jsx';
 
 // import PostCard from '../components/PostCard.jsx';
@@ -22,16 +23,17 @@ function ProfilePage() {
     }
   }
 
-  // async function getProfilePosts(){
-  //   try {
-  //     await postsService.getProfilePosts(id)
-  //   } catch (error) {
-  //     Pop.error(error.message)
-  //   }
-  // }
+  async function getProfilePosts(){
+    try {
+      await postsService.getAllPosts(id)
+    } catch (error) {
+      Pop.error(error.message)
+    }
+  }
 
   useEffect(() => {
     getProfileInfo()
+    getProfilePosts()
   }, [id])
 
 
@@ -52,7 +54,7 @@ function ProfilePage() {
       </div>
       <div className="row">
         {/* STUB postCard will go here */}
-        {/* <PostCard /> */}
+        <PostCard />
       </div>
     </div>
   )
