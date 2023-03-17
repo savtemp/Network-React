@@ -43,9 +43,9 @@ export function App() {
           <Outlet />
         </div>
 
-        <div className='container-fluid ads'>
+        {/* <div className='container-fluid ads'>
           {ads}
-        </div>
+        </div> */}
 
       </main>
 
