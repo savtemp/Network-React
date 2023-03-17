@@ -18,7 +18,7 @@ function HomePage() {
     }
   }
 
-  let posts = (AppState.posts.map(post => {
+  const posts = (AppState.posts.map(post => {
     return (
       <div className="my-1" key={post.id}>
         {/* STUB POST CARD GOES HERE */}
@@ -63,4 +63,5 @@ function HomePage() {
     </section>
   )
 }
+
 export default observer(HomePage)

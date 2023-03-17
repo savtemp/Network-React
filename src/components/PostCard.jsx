@@ -1,4 +1,4 @@
-// NOTE my rt did not work 
+import { observer } from "mobx-react-lite";
 import PropTypes from "prop-types";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -6,10 +6,10 @@ import { Post } from "../models/Post.js";
 import "./PostCard.scss"
 
 /** @param {{post:Post}} props */
-export default function PostCard({post}){
+function PostCard({post}){
 
   return(
-    <div className="card">
+    <div className="PostCard card">
       <div className="d-flex m-1 py-2">
         <Link to={'/profile/' + post.creator.id}>
           <img className="profileImg rounded-circle" src={post.creator.picture} alt="" />
@@ -32,3 +32,5 @@ export default function PostCard({post}){
 PostCard.propTypes = {
   post: PropTypes.instanceOf(Post)
 }
+
+export default observer(PostCard)

@@ -1,37 +1,39 @@
 import { AppState } from "../AppState.js";
+import { Post } from "../models/Post.js";
 import { api } from "./AxiosService.js"
 
 
 class PostsService{
 
-  async getActiveProfile(id){
-    AppState.activeProfile = null
+  async getProfile(id){
+    // AppState.profile = null
     const res = await api.get('api/profiles/' + id)
-    AppState.activeProfile = res.data
+    AppState.profile = res.data
+    console.log('[GETTING THE PROFILE]', AppState.profile);
   }
 
-  async getProfilePosts(id) {
+  async getProfileInfo(id) {
     // eslint-disable-next-line no-undef
     await Promise.allSettled([
-      this.getActiveProfile(id),
-      this.getAllPosts('api/posts?creatorId =' + id)
+      this.getProfile(id),
+      this.getAllPosts('api/posts?creatorId=' + id)
     ])
   }
 
   async getAllPosts(url = 'api/posts') {
-    // AppState.posts = []
-    // const res = await api.get('api/posts')
-    // console.log('[GETTING CARS]', res.data);
-    // AppState.posts = res.data.posts.map(post => new Post(post))
-    // console.log(AppState.posts);
+    AppState.posts = []
+    const res = await api.get(url)
+    console.log('[GETTING POSTS]', res.data);
+    AppState.posts = res.data.posts.map(post => new Post(post))
+    console.log(AppState.posts);
 
-    const res = await api.get('url')
-    const posts = res.data.posts
-    const newer = res.data.newer
-    const older = res.data.older
-    AppState.posts = posts
-    AppState.newerPage = newer
-    AppState.olderPage = older
+  //   const res = await api.get(url)
+  //   const posts = res.data.posts
+  //   const newer = res.data.newer
+  //   const older = res.data.older
+  //   AppState.posts = posts
+  //   AppState.newerPage = newer
+  //   AppState.olderPage = older
   }
 }
 

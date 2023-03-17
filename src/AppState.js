@@ -11,17 +11,12 @@ class ObservableAppState {
 
   /** @type {import('./models/Post.js').Post[]} */
   posts = []
-  post = null
+  profile = null
 
-  // NOTE add Profile model 
-  activeProfile = null
-  profilePosts = []
 
 
   // NOTE add Ads model 
   ads = []
-
-  url = ''
 
   newerPage = null
   olderPage = null
