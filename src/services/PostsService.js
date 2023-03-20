@@ -6,7 +6,7 @@ import { api } from "./AxiosService.js"
 class PostsService{
 
   async getProfile(id){
-    // AppState.profile = null
+    AppState.profile = null
     const res = await api.get('api/profiles/' + id)
     AppState.profile = res.data
     console.log('[GETTING THE PROFILE]', AppState.profile);

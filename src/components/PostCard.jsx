@@ -11,7 +11,7 @@ function PostCard({post}){
   return(
     <div className="PostCard card">
       <div className="d-flex m-1 py-2">
-        <Link to={'/profile/' + post.creator.id}>
+        <Link to={'/profiles/' + post.creator.id}>
           <img className="profileImg rounded-circle" src={post.creator.picture} alt="" />
         </Link>
         <p className="m-0 pt-2 px-2">{post.creator.name}</p>

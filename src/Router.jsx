@@ -25,7 +25,7 @@ export const router = createHashRouter([
         element: <AboutPage />,
       },
       {
-        path: 'profile/:id',
+        path: 'profiles/:id',
         element: <ProfilePage />
       },
       {
