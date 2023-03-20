@@ -61,14 +61,16 @@ function ProfilePage() {
   return (
 
     <div className="ProfilePage container-fluid">
-      <div className='row'>
+      <div className='row justify-content-center'>
         <div className="col-md-8">
           {/* STUB a profileCard will go here */}
           <ProfileCard  key={profile} />
         </div>
       </div>
-      <div className="row">
+      <div className="row justify-content-center">
+        <div className="col-md-8">
         {posts}
+        </div>
       </div>
     </div>
   )
