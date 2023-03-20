@@ -35,6 +35,13 @@ class PostsService{
   //   AppState.newerPage = newer
   //   AppState.olderPage = older
   }
+
+  async createPost(postData){
+    const res = await api.post('api/posts', postData)
+    console.log('[CREATING POST]', res.data);
+    let newPost = new Post(res.data)
+    AppState.posts.unshift(newPost)
+  }
 }
 
 
