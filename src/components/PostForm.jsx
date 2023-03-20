@@ -22,9 +22,15 @@ function PostForm() {
   }
 
   return (
-    <div className="PostForm">
-      <form onSubmit={handleSubmit}>
-
+    <div className="PostForm card my-2">
+      <form className='card-body' onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="body">Body</label>
+          <input required type="text" className='form-control' id='body' name='body' placeholder='Write something...' defaultValue={editable.body} onChange={bindEditable} />
+        </div>
+        <div>
+          <button type='submit' className='btn btn-primary'>Post</button>
+        </div>
       </form>
     </div>
   )

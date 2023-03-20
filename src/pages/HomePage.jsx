@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AppState } from "../AppState.js";
 import PostCard from "../components/PostCard.jsx";
+import PostForm from "../components/PostForm.jsx";
 import { accountService } from "../services/AccountService.js";
 import { postsService } from "../services/PostsService.js";
 import Pop from "../utils/Pop.js";
@@ -52,6 +53,10 @@ function HomePage() {
               </Link>
               <p className="m-0 py-2 text-center">{account?.name}</p>
             </div>
+          </div>
+
+          <div className="col-md-8">
+            <PostForm />
           </div>
 
           <div className="col-md-8">
