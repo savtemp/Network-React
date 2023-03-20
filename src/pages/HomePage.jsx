@@ -47,6 +47,7 @@ function HomePage() {
     <section className="home-page row p-2">
 
           <div className="col-md-4 card profileInfoCard">
+            
             <div className="row">
               <Link to={'account'}>
                 <img className="img-fluid rounded-circle p-2" src={account?.picture} alt="" />
