@@ -47,7 +47,6 @@ function HomePage() {
     <section className="home-page row p-2">
 
           <div className="col-md-4 card profileInfoCard">
-            
             <div className="row">
               <Link to={'account'}>
                 <img className="img-fluid rounded-circle p-2" src={account?.picture} alt="" />
@@ -57,12 +56,17 @@ function HomePage() {
           </div>
 
           <div className="col-md-8">
-            <PostForm />
+            <div className="row justify-content-center">
+              <div className="col-md-10">
+                <PostForm />
+              </div>
+
+              <div className="col-md-10">
+                {posts}
+              </div>
+            </div>
           </div>
 
-          <div className="col-md-8">
-            {posts}
-          </div>
 
 
 

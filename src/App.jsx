@@ -37,7 +37,7 @@ export function App() {
         <Navbar />
       </header>
 
-      <main className='d-flex'>
+      <main>
 
         <div className='container-fluid'>
           <Outlet />
