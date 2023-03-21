@@ -29,6 +29,10 @@ function PostForm() {
           <input required type="text" className='form-control' id='body' name='body' placeholder='Write something...' defaultValue={editable.body} onChange={bindEditable} />
         </div>
         <div>
+          <label htmlFor="imgUrl">Image</label>
+          <input type="url" className='form-control' id='imgUrl' name='imgUrl' placeholder='Add an Image...' defaultValue={editable.imgUrl} onChange={bindEditable} />
+        </div>
+        <div className='text-end'>
           <button type='submit' className='btn btn-primary'>Post</button>
         </div>
       </form>

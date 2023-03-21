@@ -4,6 +4,14 @@ import { api } from "./AxiosService.js"
 
 
 class PostsService{
+  async likePost(post) {
+    if(!AppState.posts){
+      throw new Error('You must be logged in to like a post')
+    }
+    const res = await api.post('api/posts/' + post.id + '/like')
+    const postIndex = AppState.posts.findIndex(p => p.id == post.id)
+    AppState.posts.splice(postIndex, 1, res.data)
+  }
 
   async getProfile(id){
     AppState.profile = null
@@ -27,13 +35,11 @@ class PostsService{
     AppState.posts = res.data.posts.map(post => new Post(post))
     console.log(AppState.posts);
 
-  //   const res = await api.get(url)
-  //   const posts = res.data.posts
-  //   const newer = res.data.newer
-  //   const older = res.data.older
-  //   AppState.posts = posts
-  //   AppState.newerPage = newer
-  //   AppState.olderPage = older
+    const newer = res.data.newer
+    const older = res.data.older
+
+    AppState.newerPage = newer
+    AppState.olderPage = older
   }
 
   async createPost(postData){
